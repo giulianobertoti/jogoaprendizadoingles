@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Developers</title>
+  <meta name="Description" content="Projeto IHC - Aplicacao para aprendizado de criancas por comando de voz"/>
+  <meta name="Keywords" content="windows 8, javascript, jQuery, css, tile"/> 
+
+  <link rel="stylesheet" href="demo-styles.css" />
+  <link rel="stylesheet" href="fluid_grid.css" />
+  <link rel="stylesheet" href="html5reset-1.6.1.css" />
+  <link rel="stylesheet" href="skill.css" />
+
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {               
+
+
+          function TileAnimate() {
+
+              $(".tile-content").hover(function (event) {
+                  event.stopPropagation();
+
+                  if (!$(this).hasClass('.tile-content .content.one')) {
+                      $(this).dequeue().stop().animate({ top: "-145px" });
+                  }
+              }, function () {
+                  $(this).addClass('animated').animate({ top: "0" }, "normal", "linear", function () {
+                      $(this).removeClass('animated').dequeue();
+                  });
+              });
+          }
+          TileAnimate(); 
+          
+
+      });
+  </script>
+  <script type="text/javascript" src="date_time.js"></script>
+
+</head>
+
+<body  onLoad="startclock()">
+
+<div class="container">
+
+  <h2>
+    Developers
+  </h2>
+  
+  <div class="col1">
+  <div class="grid_full">
+     <div class="tile blue">
+        <div class="tile-content">
+            <div class="content one">
+                <h1>Guilherme Rovetta</h1>
+            </div>
+            <div class="content two">
+				<img class="center" src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/1521537_626057924106411_323605069_n.jpg?oh=a7312e34c8964c63ca4f4ecba9c823cb&oe=54CC34E2&__gda__=1418973281_032c01241f5a075bc88766db795bf579" id="guih" width="150px">
+			</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="grid_full">
+	<div class="grid_half alpha">
+		 <div class="tile royal_blue">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center2" src="images/face.png" width="150px">
+				</div>
+				<div class="content two">
+					<a href="https://www.facebook.com/guilherme.rovetta" >
+						<h4> Facebook Personal Page </h4>
+					</a>  
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid_half omega">
+		 <div class="tile red">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center2" src="images/you.png" width="150px">
+				</div>
+				<div class="content two">
+					<a href="https://www.youtube.com/GU1H13" >
+						<h4> YouTube Personal Channel </h4>
+					</a>  
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+  
+    <div class="grid_full">
+    <div class="tile2 blue">
+        <div class="tile2-content-static">
+            <div class="content one">
+                <h2>Guilherme's Skill</h2>
+				<ul id="skill">
+				<li><span class="expand jquery"></span><em>HTML 5</em></li>
+				<li><span class="expand css3"></span><em>CSS 3</em></li>
+				<li><span class="expand html5"></span><em>JavaScript</em></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+  </div>	
+  </div>
+
+  <div class="col2"> 
+  <div class="grid_full">
+     <div class="tile green">
+        <div class="tile-content">
+            <div class="content one">
+                <h1>Hugo Richard</h1>
+            </div>
+            <div class="content two">
+				<img class="center" src="https://scontent-a-mia.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/543752_101942343337253_1113100509_n.jpg?oh=0526d79f556e7541758e8b1fdb1fb085&oe=548F3D3A" id="hugo" width="150px">
+			</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="grid_full">
+	<div class="grid_half alpha">
+		 <div class="tile royal_blue">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center2" src="images/face.png" width="150px">
+				</div>
+				<div class="content two">
+					<a href="https://www.facebook.com/hgrichardvieira" >
+						<h4> Facebook Personal Page </h4>
+					</a>  
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid_half omega">
+		 <div class="tile red">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center2" src="images/you.png" width="150px">
+				</div>
+				<div class="content two">
+					<a href="http://www.facebook.com/sweetwebdesigncom" >
+						<h4> YouTube Personal Channel </h4>
+					</a>  
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<div class="grid_full">
+    <div class="tile2 green">
+        <div class="tile2-content-static">
+            <div class="content one">
+                <h2>Hugo's Skill</h2>
+				<ul id="skill">
+				<li><span class="expand css3"></span><em>HTML 5</em></li>
+				<li><span class="expand html5"></span><em>CSS 3</em></li>
+				<li><span class="expand jquery"></span><em>JavaScript</em></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+  </div>
+	
+	<div class="grid_full">
+		 <div class="tile royal_green">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center" src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/home-128.png" width="90px">
+				</div>
+				<div class="content two">
+					<a href="index.html">
+						<h4> Click to go back to main page </h4>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+ 
+  <div class="col3"> 
+  <div class="grid_full">
+     <div class="tile orange">
+        <div class="tile-content">
+            <div class="content one">
+                <h1>Maykon Emanuel</h1>
+            </div>
+            <div class="content two">
+				<img class="center" src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/10514630_885430888137784_1041792848507496957_n.jpg?oh=809280cf336a844d70d0576770496945&oe=5492FBE9&__gda__=1419718197_a255c798dee04ac3079773726e1bf1aa" id="maykon" width="150px">
+			</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="grid_full">
+	<div class="grid_half alpha">
+		 <div class="tile royal_blue">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center2" src="images/face.png" width="150px">
+				</div>
+				<div class="content two">
+					<a href="https://www.facebook.com/maykon.emanuelcardosorocha" >
+						<h4> Facebook Personal Page </h4>
+					</a>  
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid_half omega">
+		 <div class="tile blue">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center2" src="images/twitter.png" width="150px">
+				</div>
+				<div class="content two">
+					<a href="https://www.twitter.com/maykon_cole" >
+						<h4> Twitter Personal Page </h4>
+					</a>  
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+  
+  <div class="grid_full">
+    <div class="tile2 orange">
+        <div class="tile2-content-static">
+            <div class="content one">
+                <h2>Maykon's Skill</h2>
+				<ul id="skill">
+				<li><span class="expand html5"></span><em>HTML 5</em></li>
+				<li><span class="expand jquery"></span><em>CSS 3</em></li>
+				<li><span class="expand css3"></span><em>JavaScript</em></li>
+				</ul>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>    
+</div>
+
+ <script type="text/javascript">
+     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-8815194-1");
+        pageTracker._trackPageview();
+    } catch (err) { }</script> 
+
+
+</body>
+</html>

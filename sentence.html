@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Word Mode</title>
+  <meta name="Description" content="Projeto IHC - Aplicacao para aprendizado de criancas por comando de voz"/>
+  <meta name="Keywords" content="windows 8, javascript, jQuery, css, tile"/> 
+
+  <link rel="stylesheet" href="demo-styles.css" />
+  <link rel="stylesheet" href="fluid_grid.css" />
+  <link rel="stylesheet" href="html5reset-1.6.1.css" />
+
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+   <script type="text/javascript">
+      $(document).ready(function () {               
+
+
+          function TileAnimate() {
+
+              $(".tile-content").hover(function (event) {
+                  event.stopPropagation();
+
+                  if (!$(this).hasClass('.tile-content .content.one')) {
+                      $(this).dequeue().stop().animate({ top: "-145px" });
+                  }
+              }, function () {
+                  $(this).addClass('animated').animate({ top: "0" }, "normal", "linear", function () {
+                      $(this).removeClass('animated').dequeue();
+                  });
+              });
+          }
+          TileAnimate(); 
+          
+
+      });
+  </script>
+
+  <script type="text/javascript" src="codigo.js"></script>
+
+</head>
+
+<body onLoad="sortword()">
+
+<div class="container">
+
+  <h2>
+    Word Mode - Medium
+  </h2>
+  
+  <div class="col1"> 
+  <div class="grid_full">
+	<div class="grid_half alpha">
+		 <div class="tile royal_blue">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center" src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/home-128.png" width="90px">
+				</div>
+				<div class="content two">
+					<a href="index.html">
+						<h4> Click for go back to main page </h4>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid_half omega">
+		 <div class="tile blue">
+			<div class="tile-content-static">
+				<div class="content one">
+					<img class="center" src="http://www2.psd100.com/ppp/2013/11/2701/Microphone-1127234642.png" id="start_button" width="90px">
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+  <div class="grid_full">
+	<div class="grid_half alpha">
+		 <div class="tile green">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center" src="http://wcdn3.dataknet.com/static/resources/icons/set28/e2d66149.png" width="90px" onclick="comparar()">
+				</div>
+				<div class="content two">
+					<p id="confirm"> Click for confirm your answer </p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid_half omega">
+		 <div class="tile red">
+			<div class="tile-content">
+				<div class="content one">
+					<img class="center" src="https://cdn3.iconfinder.com/data/icons/meanicons-4/512/meanicons_24-512.png" id="delete_button" width="90px">
+				</div>
+				<div class="content two">
+					<p id="eraser"> Click for delete the text </p>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+  </div>
+  
+  <div class="col2"> 
+  <div class="grid_full">
+     <div class="tile red">
+        <div class="tile-content-static">
+            <div class="content one">
+                <p id="demo"></p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="grid_full">
+     <div class="tile blue">
+        <div class="tile-content-static">
+            <div class="content one">
+                <p id="transcript"></p>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col3"> 
+  <div class="grid_full">
+	<div class="grid_half alpha">
+		 <div class="tile orange">
+			<div class="tile-content-static">
+				<div class="content one">
+                    <p class="center" id="instructions" width="90px"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+  </div>
+ 
+</div>
+
+
+ <script type="text/javascript">
+     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-8815194-1");
+        pageTracker._trackPageview();
+    } catch (err) { }</script> 
+
+
+</body>
+</html>
