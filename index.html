@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Projeto IHC - Aplicacao para aprendizado de criancas por comando de voz</title>
+  <meta name="Description" content="Projeto IHC - Aplicacao para aprendizado de criancas por comando de voz"/>
+  <meta name="Keywords" content="windows 8, javascript, jQuery, css, tile"/> 
+
+  <link rel="stylesheet" href="demo-styles.css" />
+  <link rel="stylesheet" href="fluid_grid.css" />
+  <link rel="stylesheet" href="html5reset-1.6.1.css" />
+
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {               
+
+
+          function TileAnimate() {
+
+              $(".tile-content").hover(function (event) {
+                  event.stopPropagation();
+
+                  if (!$(this).hasClass('.tile-content .content.one')) {
+                      $(this).dequeue().stop().animate({ top: "-145px" });
+                  }
+              }, function () {
+                  $(this).addClass('animated').animate({ top: "0" }, "normal", "linear", function () {
+                      $(this).removeClass('animated').dequeue();
+                  });
+              });
+          }
+          TileAnimate(); 
+          
+
+      });
+  </script>
+  <script type="text/javascript" src="date_time.js"></script>
+
+</head>
+
+<body  onLoad="startclock()">
+
+<div class="container">
+
+  <h2>
+    Projeto IHC - Aplicaçao para aprendizado de crianças por comando de voz
+  </h2>
+  
+  <div class="col1">
+  <div class="grid_full">
+     <div class="tile blue">
+        <div class="tile-content">
+            <div class="content one">
+                <h1>Picture Mode</h1>
+            </div>
+            <div class="content two">
+                <a href="http://www.facebook.com/sweetwebdesigncom" >
+					<p>Easy</p>
+				</a>  
+			</div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="grid_full">
+     <div class="tile orange">
+        <div class="tile-content">
+            <div class="content one">
+                <h1>Word Mode</h1>
+            </div>
+            <div class="content two">
+                <a href="word.html" >
+					<p>Medium</p>
+				</a>  
+			</div>
+        </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="col2"> 
+  <div class="grid_full">
+     <div class="tile red">
+        <div class="tile-content">
+            <div class="content one">
+                <h1>Sentence Mode</h1>
+            </div>
+            <div class="content two">
+                <a href="sentence.html" >
+					<p>Hard</p>
+				</a>  
+			</div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="grid_full">
+     <div class="tile green">
+        <div class="tile-content">
+            <div class="content one">
+                <h1>Help Mode</h1>
+            </div>
+            <div class="content two">
+                <a href="help.html" >
+					<p>Click to some tips</p>
+				</a>  
+			</div>
+        </div>
+    </div>
+  </div>  
+  
+  </div>
+ 
+  <div class="col3"> 
+  <div class="grid_full">
+     <div class="tile royal_blue">
+        <div class="tile-content">
+            <div class="content one">
+                <h1>Tutorials</h1>
+            </div>
+            <div class="content two">
+                <a href="tuto.html" >
+					<h4>Click to watch some videos to help you in the beginning</h4>
+				</a>  
+			</div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="grid_full">
+     <div class="tile pink">
+        <div class="tile-content">
+            <div class="content one">
+                <h1>Developers</h1>
+            </div>
+            <div class="content two">
+                <a href="developers.html" >
+					<h4>Click to some information about the developers</h4>
+				</a>  
+			</div>
+        </div>
+    </div>
+  </div> 
+  </div>
+  </div>
+   
+
+</div>
+
+ <script type="text/javascript">
+     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-8815194-1");
+        pageTracker._trackPageview();
+    } catch (err) { }</script> 
+
+
+</body>
+</html>
