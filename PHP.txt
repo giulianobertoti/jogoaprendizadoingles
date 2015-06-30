@@ -1,0 +1,14 @@
+<?php
+ // Endereço do site
+ $url = 'http://www.mauricioprogramador.com.br';
+
+ // Pegando dados do Site e colocando em uma String
+ $dadosSite = file_get_contents($url);
+
+ // Exibindo o retorno
+ echo $dadosSite;
+?>
+
+query = sorteada[i];
+
+"http://en.wikipedia.org/wiki/"+query;
