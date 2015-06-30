@@ -67,6 +67,15 @@ list-style: none;
   position:relative;
   }
   
+  .tile3 {
+  display: block;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+  color:#fff;
+  position:relative;
+  }
+  
 .tile div 
 {
   display: block;
@@ -109,6 +118,13 @@ list-style: none;
 .tile2 .tile-content, .tile2 .tile-content-static {
   display: block;
   height: 10.063em;
+  width: 100%;
+  position: relative;
+  }
+  
+.tile3 .tile-content, .tile2 .tile-content-static {
+  display: block;
+  height: 11.063em;
   width: 100%;
   position: relative;
   }
@@ -446,4 +462,14 @@ list-style: none;
 	vertical-align: middle;
 	text-align: center;
 }
+
+#result_box{
+	color: #000000;
+	font-family: sans-serif;
+	font-weight:300;
+    font-size:200%;
+	vertical-align: middle;
+	text-align: center;
+}
+
 

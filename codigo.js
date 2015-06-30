@@ -1,12 +1,28 @@
-words = ["hello", "boat", "dog", "cat", "fish", "other"];    
+words = [];    
+var path = window.location.pathname;
+var page = path.split("/").pop();
+if (page == "word.html" || page == "image.html"){
+	$.getJSON("https://api.myjson.com/bins/3ajxn&jsoncallback=", function(data) {
+		words = data;
+	});
+	//words = ["hello", "boat", "dog", "cat", "fish", "other"]; 
+}
+if (page == "sentence.html"){
+	$.getJSON("https://api.myjson.com/bins/3eu97&jsoncallback=", function(data) {
+		words = data;
+	});
+	//words = ["i am the king of the mountain", "i am your father", "what did you say", "say my name", "the winter is coming", "officer down i repeat officer down"];
+}
 
 var final_transcript = '';
 var recognizing = false;
+var query = "apple";
+
 
 var language = 'en-US';  // change this to your language
 
 $(document).ready(function() {
-
+	
     // check that your browser supports the API
     if (!('webkitSpeechRecognition' in window)) {
         alert("Your Browser does not support the Speech API");
@@ -53,6 +69,7 @@ $(document).ready(function() {
             }
 			$("#eraser").click(function(e) {
 				document.getElementById("transcript").innerText = "";
+				document.getElementById("input_box").value = "";
 				final_transcript = "";
 			});
         };
@@ -79,10 +96,16 @@ $(document).ready(function() {
                 $('#transcript').html('&nbsp;');
             }
         });
+		
+		
+		
     }
         
     $("#confirm").click(function(e) {
-		if (document.getElementById("demo").innerText == document.getElementById("transcript").innerText){
+		alert("aqui");
+		alert(document.getElementById("demo").innerHTML);
+		if (document.getElementById("demo").innerHTML == document.getElementById("transcript").innerText){
+			alert("aqui2");
 			document.getElementById("instructions").innerHTML = "Correct";
 			var score = parseInt(document.getElementById("score").innerText);
 			document.getElementById("score").innerText = score + 100;
@@ -96,9 +119,6 @@ $(document).ready(function() {
 		}
 	});
         
-    $("#eraser").click(function(e) {
-        document.getElementById("input_box").value = "";
-	});
 	
 	$("#sound_button").click(function(e) {
 		var u = new SpeechSynthesisUtterance();
@@ -115,7 +135,16 @@ $(document).ready(function() {
 function changeWord(){
 	var i = sorteio();
 	var score = parseInt(document.getElementById("score").innerText);
+	query = words[i];
 	if (score >= 50){
+		$("#images").empty();
+		$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",{tags: query, tagmode: "any", format: "json",  machine_tags: "dc:"},
+		function(data) {
+			$.each(data.items, function(i,item){
+				$("<img/>").attr("src", item.media.m).appendTo("#images");
+				if ( i == 3 ) return false;
+			});
+		});
 		document.getElementById("score").innerText = score - 50;
 		if (words[i] != document.getElementById("demo").innerText){
 			document.getElementById("demo").innerHTML = words[i];
@@ -127,6 +156,7 @@ function changeWord(){
 	else{
 		alert("Your score is too low to change the word!");
 	}
+
 }
 
 function sorteio(){
@@ -147,6 +177,27 @@ function removeWord(){
 	var indice = words.indexOf(document.getElementById("demo").innerText);
 	//alert("indice que vai ser excluido: " + indice);
 	document.getElementById("demo").innerHTML = words[i];
+	query = document.getElementById("demo").innerHTML;
+	$("#images").empty();
+		$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",{tags: query, tagmode: "any", format: "json",  machine_tags: "dc:"},
+		function(data) {
+			$.each(data.items, function(i,item){
+				$("<img/>").attr("src", item.media.m).appendTo("#images");
+				if ( i == 3 ) return false;
+			});
+		});
 	words.splice(indice , 1);
 	//alert("Vetor depois de tirar: " + words);
+}
+
+function init(){
+	query = document.getElementById("demo").innerHTML;
+	$("#images").empty();
+		$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",{tags: query, tagmode: "any", format: "json",  machine_tags: "dc:"},
+		function(data) {
+			$.each(data.items, function(i,item){
+				$("<img/>").attr("src", item.media.m).appendTo("#images");
+				if ( i == 3 ) return false;
+			});
+		});
 }

@@ -13,7 +13,7 @@
 
   <script type="text/javascript" src="jquery.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
+  
    <script type="text/javascript">
       $(document).ready(function () {               
 
@@ -36,6 +36,48 @@
           
 
       });
+	  
+	  /*$("#us_br").click(function(e) {
+			var languageFrom = 'en';
+			var languageTo = 'pt';
+			alert("us");
+	  });
+	  
+	  $("#br_us").click(function(e) {
+			var languageFrom = 'pt';
+			var languageTo = 'us';
+	  });*/
+	  
+	  
+	  function translator() {
+        /*document.getElementById('result_box').innerHTML="";
+        var text = document.getElementById('input_box').value;
+		alert("aqui");
+        window.mycallback = function(response) {
+			document.getElementById('result_box').innerHTML = response;
+			alert("aqui2");
+        }
+		alert("aqui3");
+		alert(languageFrom);
+		alert(languageTo);
+        var s = document.createElement("script");
+        s.src = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate?oncomplete=mycallback&appId=68D088969D79A8B23AF8585CC83EBA2A05A97651&from=" + languageFrom + "&to=" + languageTo + "&text=" + text;
+        document.getElementsByTagName("head")[0].appendChild(s);*/
+		var newScript = document.createElement('script');
+		newScript.type = 'text/javascript';
+		var sourceText = escape(document.getElementById("input_box").value);
+		alert(sourceText);
+		// WARNING: be aware that YOUR-API-KEY inside html is viewable by all your users.
+		// Restrict your key to designated domains or use a proxy to hide your key
+		// to avoid misuage by other party.
+		var languageFrom = 'en';
+		var languageTo = 'pt';
+		var source = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate?oncomplete=mycallback&appId=68D088969D79A8B23AF8585CC83EBA2A05A97651&from=" + languageFrom + "&to=" + languageTo + "&text=" + sourceText;
+		newScript.src = source;
+
+		// When we add this script to the head, the request is sent off.
+		document.getElementsByTagName('head')[0].appendChild(newScript);
+	}
   </script>
 
   <script type="text/javascript" src="codigo.js"></script>
@@ -43,6 +85,44 @@
 </head>
 
 <body>
+
+  <script>
+      function translateText(response) {
+        document.getElementById("result_box").innerHTML += "<br>" + response.data.translations[0].translatedText;
+      }
+  </script>
+  
+  <script>
+	  function translator() {
+			/*document.getElementById('result_box').innerHTML="";
+			var text = document.getElementById('input_box').value;
+			alert("aqui");
+			window.mycallback = function(response) {
+				document.getElementById('result_box').innerHTML = response;
+				alert("aqui2");
+			}
+			alert("aqui3");
+			alert(languageFrom);
+			alert(languageTo);
+			var s = document.createElement("script");
+			s.src = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate?oncomplete=mycallback&appId=68D088969D79A8B23AF8585CC83EBA2A05A97651&from=" + languageFrom + "&to=" + languageTo + "&text=" + text;
+			document.getElementsByTagName("head")[0].appendChild(s);*/
+			var newScript = document.createElement('script');
+			newScript.type = 'text/javascript';
+			var sourceText = escape(document.getElementById("input_box").value);
+			alert(sourceText);
+			// WARNING: be aware that YOUR-API-KEY inside html is viewable by all your users.
+			// Restrict your key to designated domains or use a proxy to hide your key
+			// to avoid misuage by other party.
+			var languageFrom = 'en';
+			var languageTo = 'pt';
+			var source = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate?oncomplete=mycallback&appId=68D088969D79A8B23AF8585CC83EBA2A05A97651&from=" + languageFrom + "&to=" + languageTo + "&text=" + sourceText;
+			newScript.src = source;
+
+			// When we add this script to the head, the request is sent off.
+			document.getElementsByTagName('head')[0].appendChild(newScript);
+		}
+	</script>
 
 <div class="container">
 
@@ -56,7 +136,7 @@
 		 <div class="tile royal_blue">
 			<div class="tile-content">
 				<div class="content one">
-					<img class="center" src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/home-128.png" width="90px">
+					<img class="center" src="images/home.png" width="90px">
 				</div>
 				<div class="content two">
 					<a href="index.html">
@@ -75,7 +155,7 @@
 			</div>
 		</div>
 	</div>
-  </div>
+  </div> 
   </div>
   
   <div class="col2"> 
@@ -83,7 +163,7 @@
      <div class="tile purple">
         <div class="tile-content-static">
             <div class="content one">
-                <textarea id="input_box" rows="9" cols="30"> Digit your text here </textarea>
+                <textarea id="input_box" rows="9" cols="40"> Digit your text here </textarea>
             </div>
         </div>
     </div>
@@ -105,7 +185,7 @@
 		 <div class="tile red">
 			<div class="tile-content">
 				<div class="content one">
-					<img class="center" src="https://cdn3.iconfinder.com/data/icons/meanicons-4/512/meanicons_24-512.png" id="delete_button" width="90px">
+					<img class="center" src="images/delete.png" id="delete_button" width="90px">
 				</div>
 				<div class="content two">
 					<p id="eraser"> Click to delete the text </p>
